@@ -1,12 +1,18 @@
 const express = require('express');
 const path = require("path");
 
+
+const static_path = path.join(__dirname, "/public/");
+// console.log(static_path);
 const app = express()
 const PORT = 8000;
 const nodeMailer = require('nodemailer');
 const Mailgen = require('mailgen');
 require('dotenv').config();
 
+
+
+app.use(express.static(static_path));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
