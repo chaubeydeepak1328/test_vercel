@@ -3,7 +3,6 @@ const path = require("path");
 
 
 const static_path = path.join(__dirname, "/public/");
-// console.log(static_path);
 const app = express()
 const PORT = 8000;
 const nodeMailer = require('nodemailer');
