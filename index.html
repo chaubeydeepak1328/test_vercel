@@ -471,13 +471,17 @@
             event.preventDefault();
 
             // Show SweetAlert
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Message Sent Successfully",
-                showConfirmButton: false,
-                timer: 5000
+            let swalLoading = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
             });
+
+
+
 
             try {
                 // Simulate an asynchronous operation (replace this with your actual form submission logic)
@@ -486,9 +490,23 @@
 
                 // Submit the form
                 document.getElementById('myform').submit();
+
+                // closr the loading spinner
+                swalLoading.close();
+
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Message Sent Successfully",
+                    showConfirmButton: false,
+                    timer: 5000
+                });
             } catch (error) {
                 console.error('Error:', error);
                 // Handle errors if needed
+
+                swalLoading.close()
             }
         });
 
