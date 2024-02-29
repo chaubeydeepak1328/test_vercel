@@ -28,7 +28,9 @@
 </head>
 
 <body>
-    <div id="loader" class="center"></div>
+    <!-- {{!-- Loader Start Here --}} -->
+    <div class="loader" id="center"></div>
+    <!-- {{!-- Loader end Here --}} -->
     <header class="header">
         <a class="logo" href="#" alt="Logo">Portfolio</a>
 
@@ -110,32 +112,34 @@
             <h1 class="sub-title">My <span>Service</span></h1>
             <div class="service-list">
 
-                <div>
+                <div class="service_label">
                     <i class="fa-solid fa-code-simple" style="color: aliceblue;"></i>
-                    <h2>Frontend</h2>
-                    <p>Transforming ideas into visually stunning and intuitive user interfaces is my expertise in
-                        frontend development. Leveraging the power of HTML, CSS, and JavaScript, I create engaging and
-                        responsive designs that captivate users and elevate their overall experience.</p>
+                    <h2>Software Developer</h2>
+                    <p>Proficient in multiple languages and frameworks. <br>
+                        Strong understanding of data structures and algorithms. <br>
+                        Ability to collaborate effectively in cross-functional teams.
+                    </p>
                     <a href="#" class="read" onclick="myserviceAlert()">Learn More</a>
                 </div>
 
-                <div>
+                <div class="service_label">
                     <i class="fa-solid fa-code-simple" style="color: aliceblue;"></i>
-                    <h2>backend</h2>
-                    <p>Behind every seamless user interface lies a robust backend infrastructure. My skills in backend
-                        development ensure the functionality, security, and scalability of web applications. From
-                        database management to server-side scripting, I specialize in building the backbone that powers
-                        dynamic and efficient websites.</p>
+                    <h2>WebApp Developer</h2>
+                    <p>Expertise in creating dynamic and interactive web experiences. <br>
+                        Proficiency in front-end and back-end technologies. <br>
+                        Knowledge of web security and performance optimization.
+                    </p>
                     <a href="#" class="read" onclick="myserviceAlert()">Learn More</a>
 
                 </div>
 
-                <div>
+                <div class="service_label">
                     <i class="fa-solid fa-code-simple" style="color: aliceblue;"></i>
-                    <h2>Responsive Web Design</h2>
-                    <p>Adapt to the diverse landscape of digital devices with responsive web design. I prioritize
-                        creating websites that not only look exceptional but also provide a consistent and optimal
-                        experience across desktops, tablets, and smartphones. Your content will shine on any screen.</p>
+                    <h2>Data Science</h2>
+                    <p>Skilled in extracting valuable insights from data.  <br>
+                        Experience with machine learning algorithms and techniques. <br>
+                        Proficiency in Python, R, and data wrangling tools.
+                    </p>
                     <a href="#" class="read" onclick="myserviceAlert()">Learn More</a>
 
                 </div>
@@ -530,22 +534,21 @@
         }
 
 
-
-
-        //Loader
+        //Loader code
         document.onreadystatechange = function () {
             if (document.readyState !== "complete") {
                 document.querySelector(
                     "body").style.visibility = "hidden";
                 document.querySelector(
-                    "#loader").style.visibility = "visible";
+                    ".loader").style.visibility = "visible";
             } else {
                 document.querySelector(
-                    "#loader").style.display = "none";
+                    ".loader").style.display = "none";
                 document.querySelector(
                     "body").style.visibility = "visible";
             }
         };
+
 
     </script>
 </body>
